@@ -1,1 +1,1 @@
-# ECE8803-GenAI
+# ECE8803 - Generative & Geometric AI homeworks, notes, Ahas, etc.
