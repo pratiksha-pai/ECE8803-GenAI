@@ -12,14 +12,12 @@ total_pixels = width * height
 all_images = [np.array([int(x) for x in format(i, '0' + str(total_pixels) + 'b')]).reshape(width, height) 
               for i in range(2 ** total_pixels)]
 
-
-# print(all_images)
 # Calculate probabilities proportional to the number of black pixels in each image
 probs = [np.sum(image) for image in all_images]
 probs = np.array(probs) / np.sum(probs)
 print(probs.shape)
 print(sum(probs))
-# # Create a Categorical distribution using the calculated probabilities
+# Create a Categorical distribution using the calculated probabilities
 categorical_rv = rv_discrete(name='categorical', values=(np.arange(len(all_images)), probs))
 
 print(categorical_rv)
